@@ -163,7 +163,7 @@ class Attacker():
                         if torch.all(tx[i] == 0):
                             print('This raw data is out of order')
                         if torch.sum(tx[i] - adData[i]) != 0:
-                            if flabels[i] != predictedLabels[i]:  # 保证此条数据原本就是模型可以识别正确的
+                            if flabels[i] != predictedLabels[i]:
                                 samples_x_list.append(tx[i].detach().clone().cpu())
                                 frames_list.append(tn[i].detach().clone().cpu())
                                 attck_samples_x_list.append(adData[i].detach().clone().cpu())
